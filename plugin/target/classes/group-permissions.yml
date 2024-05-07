@@ -1,0 +1,42 @@
+groups:
+  default:
+    default: true
+    permissions:
+      - ticket.create
+      - ticket.list.default
+      - ticket.update
+      - ticket.close
+      - ticket.help
+    inheritance:
+      - None
+
+  staff:
+    default: false
+    permissions:
+      - ticket.create
+      - ticket.list.default
+      - ticket.update
+      - ticket.update.others
+      - ticket.close
+      - ticket.help
+      - ticket.reopen
+      - ticket.claim
+      - ticket.teleport
+    inheritance:
+      - None
+
+  admin:
+    default: false
+    permissions:
+      - ticket.create
+      - ticket.list.admin
+      - ticket.update
+      - ticket.update.others
+      - ticket.close
+      - ticket.help
+      - ticket.reopen
+      - ticket.claim
+      - ticket.teleport
+      - ticket.group
+    inheritance:
+      - None

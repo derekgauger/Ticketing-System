@@ -1,0 +1,41 @@
+name: Plugin
+version: '2.0.0-beta.2'
+main: org.incendo.cloudpaper.Plugin
+api-version: '1.20'
+commands:
+  ticket:
+    aliases: [tkt]
+    description: Manage tickets
+    usage: /ticket
+
+permissions:
+  ticket.create:
+    description: Creates tickets
+    default: op
+  ticket.list.admin:
+    description: Lists out all the tickets
+    default: op
+  ticket.update:
+    description: Updates a ticket info
+    default: op
+  ticket.update.others:
+    description: Updates other peoples tickets
+    default: op
+  ticket.close:
+    description: Closes a ticket
+    default: op
+  ticket.help:
+    description: Help menu
+    default: op
+  ticket.reopen:
+    description: Reopens a ticket
+    default: op
+  ticket.claim:
+    description: Claims a ticket to resolve the problem
+    default: op
+  ticket.teleport:
+    description: Teleports to a location of a ticket
+    default: op
+  ticket.group:
+    description: Changes the players permission group
+    default: op

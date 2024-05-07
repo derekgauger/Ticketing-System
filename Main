@@ -1,0 +1,40 @@
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class TicketingPlugin extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        // Connect to Discord and SQL Database here
+    }
+
+    @Override
+    public void onDisable() {
+        // Close connection to Discord and SQL Database here
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (command.getName().equalsIgnoreCase("ticket")) {
+            if (args.length < 1) {
+                sender.sendMessage("Usage: /ticket <message>");
+                return false;
+            }
+            String playerName = sender.getName();
+            String ticketMessage = String.join(" ", args);
+            saveTicket(playerName, ticketMessage);
+            sendToDiscord(playerName, ticketMessage);
+            return true;
+        }
+        return false;
+    }
+
+    private void saveTicket(String playerName, String ticketMessage) {
+        // Store ticket in database
+    }
+
+    private void sendToDiscord(String playerName, String ticketMessage) {
+        // Send ticket alert to the Discord Channel
+    }
+}

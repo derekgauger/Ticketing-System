@@ -1,0 +1,79 @@
+# config.yml
+
+# DATABASE CONFIGS
+# This value can be mariadb, mysql, or sqlite
+database-type: mysql
+# Database name
+database-name: ticket
+# This is the hosting ip address for the database
+database-host: localhost
+# The port of the database
+database-port: 3306
+# The username to connect to the database with
+database-username: root
+# The password to connect to the database
+database-password: root
+# Command cooldown time (in seconds)
+command-cooldown: 0
+
+# DISCORD CONFIGS
+# This is the webhook gotten from the Discord server settings
+webhook: https://discord.com/api/webhooks/1225576162122797117/-73cUaCpH48c7U0qDyjZQIFxxNdYXt1Oz_I_R_r_aC9E5r1zwujPXvdOmhoLfH57u-AC
+# Currently, this is not being used, this is a random constant
+discord-id: 183290423847323
+# This is the name of the poster being used on the Discord side of the webhook.
+discord-webhook-username: Ticketing Plugin
+
+# MESSAGES
+# HELP MENU MESSAGES
+helpMessage: "<green>This is a ticketing system plugin used for server moderation. The goal is to allow users to submit a ticket and have an admin view/solve their issue when available.</green>"
+commandListMessage: "<aqua>List of commands and usages: {hover for descriptions}</aqua>"
+helpMenuMessage: "<hover:show_text:'<green>Shows this help menu</green>'><gold> - /ticket help</gold></hover>"
+createTicketMessage: "<hover:show_text:'<green>Creates a help ticket</green>'><gold> - /ticket create <description></gold></hover>"
+updateTicketMessage: "<hover:show_text:'<green>Updates an existing help ticket</green>'><gold> - /ticket update <id> <description> <new_value></gold></hover>"
+closeTicketMessage: "<hover:show_text:'<green>Closes an existing help ticket</green>'><gold> - /ticket close <id></gold></hover>"
+reopenTicketMessage: "<hover:show_text:'<green>Reopens a closed ticket</green>'><gold> - /ticket reopen <id> </gold></hover>"
+listAllTicketsMessage: "<hover:show_text:'<green>Lists all opened tickets</green>'><gold> - /ticket list</gold></hover>"
+listOwnedTicketsMessage: "<hover:show_text:'<green>Lists all owned and active tickets</green>'><gold> - /ticket list</gold></hover>"
+teleportTicketMessage: "<hover:show_text:'<green>Teleports to the location of a ticket</green>'><gold> - /ticket teleport <id></gold></hover>"
+claimTicketMessage: "<hover:show_text:'<green>Claims a ticket to work on</green>'><gold> - /ticket claim <id></gold></hover>"
+assignGroupMessage: "<hover:show_text:'<green>Assigns a user to a certain group</green>'><gold> - /ticket group <group_name> <username></gold></hover>"
+
+# UI MESSAGES
+header-ui: "<aqua>List of ticket command options:</aqua>"
+help-ui: "<gold> - Click <click:suggest_command:/ticket help><green><bold><hover:show_text:'/ticket help'>HERE</hover></bold></green></click> to open the commands list!</gold>"
+create-ui: "<gold> - Click <click:suggest_command:/ticket create ><green><bold><hover:show_text:'/ticket create'>HERE</hover></bold></green></click> to create a new ticket!</gold>"
+update-ui: "<gold> - Click <click:suggest_command:/ticket update ><green><bold><hover:show_text:'/ticket update'>HERE</hover></bold></green></click> to update an existing ticket!</gold>"
+close-ui: "<gold> - Click <click:suggest_command:/ticket close ><green><bold><hover:show_text:'/ticket close'>HERE</hover></bold></green></click> to close a ticket!</gold>"
+reopen-ui: "<gold> - Click <click:suggest_command:/ticket reopen ><green><bold><hover:show_text:'/ticket reopen'>HERE</hover></bold></green></click> to reopen a closed ticket!</gold>"
+list-ui: "<gold> - Click <click:suggest_command:/ticket list ><green><bold><hover:show_text:'/ticket list'>HERE</hover></bold></green></click> to list your own tickets!</gold>"
+list-admin-ui: "<gold> - Click <click:suggest_command:/ticket list ><green><bold><hover:show_text:'/ticket list'>HERE</hover></bold></green></click> to list all existing tickets!</gold>"
+teleport-ui: "<gold> - Click <click:suggest_command:/ticket teleport ><green><bold><hover:show_text:'/ticket teleport'>HERE</hover></bold></green></click> to teleport to a ticket location!</gold>"
+group-ui: "<gold> - Click <click:suggest_command:/ticket group ><green><bold><hover:show_text:'/ticket group'>HERE</hover></bold></green></click> to assign a user to a group!</gold>"
+claim-ui: "<gold> - Click <click:suggest_command:/ticket claim ><green><bold><hover:show_text:'/ticket claim'>HERE</hover></bold></green></click> to claim a ticket to work on!</gold>"
+
+# COMMAND MESSAGES
+# These messages are made using minimessage. Go to this website for a guide on how to use it properly: https://docs.advntr.dev/minimessage/index.html
+command-no-permission: <red>You do not have permission for that command!</red>
+invalid-ticket-id: <red>Invalid ticket ID. Please provide a valid ticket ID. '/ticket list' to get valid IDs</red>
+# Input called <cooldownTime> is replaced with the value of the command-cooldown attribute in the config.yml
+command-cooldown-msg: <red>There is a <cooldowntime> second cooldown between /ticket commands!</red>
+ticket-claimed: <gold>Ticket claimed successfully!</gold>
+# username is the person being given perms, groupname is the group being added to
+group-updated: <gold><username> has been given to the group '<groupname>'</gold>
+ticket-reopened: <gold>Ticket reopened successfully!</gold>
+ticket-closed: <gold>Ticket closed successfully!</gold>
+# <locationString> is replaced with the location of the ticket (world, x, y, z)
+teleported-to-ticket: <gold>Teleported to ticket location <aqua>(<locationstring>)</aqua>!</gold>
+ticket-created: <gold>Ticket submitted! View it's information using /ticket list</gold>
+ticket-list-admin-head: <aqua>List of all tickets {Hover for descriptions}</aqua>
+ticket-list-admin-no-tickets: <gold>There are no tickets to view.</gold>
+ticket-list-default-head: <aqua>List of your tickets {Hover for descriptions}</aqua>
+ticket-list-default-no-tickets: <gold>You have no tickets to view. Use '/tickets create' if you need to create one.</gold>
+ticket-not-owned-by-you: <red>You are not the owner of that ticket!</red>
+ticket-updated: <gold>Ticket description updated successfully!</gold>
+ticket-update-failed: <red>Invalid attribute. Please provide a valid attribute to edit (description).</red>
+# Possible inputs, <description>, <id>, <username>, <formatteddate>, <status>
+listed-ticked: "<hover:show_text:'<gold><description></gold>'><gold> - </gold><yellow>ID: <id></yellow><green> | </green><gold> <username> </gold><green> | </green><yellow>Created: <formatteddate> </yellow><green> | </green><gold> <status> </gold></hover>"
+
+
